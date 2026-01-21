@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styles for the HEHE popover theme */
+.popover-hehe .popover-header,
+.popover-hehe .popover-body {
+  background: transparent; /* use container background so corners are clean */
+  color: #fff;
+  padding: 16px 18px;
+}
+
+.popover-hehe {
+  background: #000; /* container background */
+  border-radius: 25px;
+  padding: 0; /* header/body will supply their own padding */
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+.popover-hehe .popover-header {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.popover-hehe .popover-body {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+
+/* Custom arrow that matches the black background. Adjust sizes/position if needed. */
+/* arrow removed — no arrow styles needed */
+
+/* If you prefer the arrow to be created with pseudo-element only (Bootstrap style), you can hide the element itself
+  and rely on the ::before pseudo-element positioned accordingly. Tweak as needed. */
+
+/* Naughty Button transitions and keyframes */
+.naughty-button {
+  transition: transform 220ms cubic-bezier(.2,.9,.3,1),
+              box-shadow 220ms cubic-bezier(.2,.9,.3,1),
+              background-color 180ms ease;
+  will-change: transform, box-shadow;
+}
+
+.naughty-button:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  animation: naughty-bounce 600ms cubic-bezier(.2,.9,.3,1);
+}
+
+.naughty-button:active {
+  transform: translateY(-2px) scale(0.995);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+.naughty-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 99, 132, 0.12);
+  animation: naughty-pulse 900ms ease-out;
+}
+
+@keyframes naughty-bounce {
+  0% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-8px) scale(1.03); }
+  60% { transform: translateY(-4px) scale(1.015); }
+  100% { transform: translateY(0) scale(1.02); }
+}
+
+@keyframes naughty-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255,99,132,0.14); }
+  70% { box-shadow: 0 0 0 10px rgba(255,99,132,0.02); }
+  100% { box-shadow: 0 0 0 0 rgba(255,99,132,0); }
+}
